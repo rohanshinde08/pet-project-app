@@ -12,8 +12,7 @@ pipeline {
     stages {
         stage('GIT SCM CHECKOUT') {
             steps {
-                git url: 'https://github.com/rohanshinde08/pet-project-app.git'
-                branch: 'master'
+                git 'https://github.com/rohanshinde08/pet-project-app.git'
             }
         }
         stage('Maven Build') {
