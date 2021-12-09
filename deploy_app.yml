@@ -1,0 +1,27 @@
+---
+- hosts: pet-clinic
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: remove older docker-py
+       pip:
+        name: docker-py
+        state: absent
+
+    - name: remove older docker-compose
+       pip:
+        name: docker-compose
+        state: absent
+    
+    - name: remove older docker
+       pip:
+        name: docker
+        state: absent
+
+    - name: Create a data container
+      docker_container:
+        name: petclinic
+        image: rohanshinde08/spring-petclinic
+        published_ports: 8080:8080
+        state: started
