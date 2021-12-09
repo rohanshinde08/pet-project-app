@@ -5,17 +5,17 @@
   become_method: sudo
   tasks:
     - name: remove older docker-py
-       pip:
+      pip:
         name: docker-py
         state: absent
 
     - name: remove older docker-compose
-       pip:
+      pip:
         name: docker-compose
         state: absent
     
     - name: remove older docker
-       pip:
+      pip:
         name: docker
         state: absent
 
