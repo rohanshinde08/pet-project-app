@@ -32,7 +32,7 @@ pipeline {
                 echo 'Docker build'
                 cd spring-petclinic
                 docker build -t rohanshinde08/spring-petclinic .
-                echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
+                echo ${DOCKERCRED_PSW} | docker login --username ${DOCKERCRED_USR} --password-stdin
                 docker push rohanshinde08/spring-petclinic
                 '''
             }
