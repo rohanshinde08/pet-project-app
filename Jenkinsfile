@@ -42,6 +42,7 @@ pipeline {
                 sh '''
                 echo 'Deploying app with ansible'
                 export ANSIBLE_HOST_KEY_CHECKING=False
+                sed -i 's|ip_address|"${DEPLOY_TARGET}"|g' ./hosts
                 ansible-playbook -i ./hosts ./deploy_app.yml 
                 '''
             }
