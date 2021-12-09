@@ -13,7 +13,7 @@ pipeline {
         stage('GIT SCM CHECKOUT') {
             steps {
                 git url: 'https://github.com/rohanshinde08/pet-clinic-spring-ron.git'
-                branch: 'main'
+                branch: 'master'
             }
         }
         stage('Maven Build') {
