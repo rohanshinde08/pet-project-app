@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('GIT SCM CHECKOUT') {
             steps {
-                git url: 'https://github.com/rohanshinde08/pet-clinic-spring-ron.git'
+                git url: 'https://github.com/rohanshinde08/pet-project-app.git'
                 branch: 'master'
             }
         }
