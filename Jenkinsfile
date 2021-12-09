@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment { 
         DOCKERCRED = credentials('dockerhub')
-        DOCKER_USER = '${DOCKERCRED_USR}'
+        DOCKER_USERNAME = '${DOCKERCRED_USR}'
         DOCKER_PASSWORD = '${DOCKERCRED_PSW}'
         JAVA_HOME = '/opt/jdk1.8.0_131/'
     }
@@ -32,7 +32,7 @@ pipeline {
                 echo 'Docker build'
                 cd spring-petclinic
                 docker build -t rohanshinde08/spring-petclinic .
-                echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USER} --password-stdin
+                echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
                 docker push rohanshinde08/spring-petclinic
                 '''
             }
